@@ -1,20 +1,31 @@
-### Assumptions
-- User is required to enter options
-- Full path is no longer than 200 chars
-- Name of a path cannot have spaces
-- Files and Directories do not have the same name
-- Error if file to write into does not exist
-- Size of the paths file is no bigger than 2000 characters
-- The client must enter the path relative to the ss and it must begin with '/'
-- If a client is writing to a file, then the other client can't access the file (Resource Busy error)
-- You cannot get permissions of a directory
-- The code will NOT work with string when you are required to enter an integer (like for options)
-- Assuming error codes requires us to display only one of the possible errors.
-- All implementations until multiple clients (minus redudancy) is there in the predund branch.
+# Network File System
 
-### Project overview??
-- To run: ./nm ./ss ./client and then ss can come at anytime
-- Same ports cannot be reused by multiple storage servers
-- 5566 is always reserved for the naming server and cannot be used for any other purpose
-- The storage server must always have a file that stores all the accessible paths in the same directory as the ss code, whose name needs to be input at prompt
-- If the parent directory of a file/folder is not accessible, the file/folder itself will not be accessible
+Our network-based file system offers a set of features enabling the following file operations:
+
+- **Read:** Retrieve content from files.
+- **Write:** Create and modify file content.
+- **Access Permissions:** Obtain file permission details.
+- **Create:** Generate new files.
+- **Delete:** Remove files from the system.
+- **Copy:** Duplicate files/directories effortlessly.
+
+Access to files is restricted to a predefined list of paths provided by the storage server to the naming server during initialization.
+
+## Setup Instructions
+
+To initialize and operate the file system:
+
+1. **Clone Repository:** Obtain the source code.
+2. **Run 'make':** Compile the codebase.
+3. **Move Executable:** Place the executable in your desired storage server location.
+4. **Define Accessible Paths:** Create a file listing paths for accessibility.
+5. **Launch Naming Server:** Execute the naming server (`./nm`).
+6. **Start Storage Servers:** Activate storage servers (`./ss`).
+7. **Run Clients:** Initiate clients from respective locations.
+
+## Noteworthy Features
+
+- **Concurrent Client Support:** Capable of running multiple clients simultaneously.
+- **Access Control:** Ensures clients only access valid and permitted paths.
+- **File Handling:** Supports reading files up to 15GB in size.
+- **Reliability:** Ensures consistent and reliable functionality.
