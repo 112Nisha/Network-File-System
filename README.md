@@ -21,7 +21,7 @@ To initialize and operate the file system:
 4. **Define Accessible Paths:** Create a file listing paths for accessibility.
 5. **Launch Naming Server:** Execute the naming server (`./nm`).
 6. **Start Storage Servers:** Activate storage servers (`./ss`).
-7. **Run Clients:** Initiate clients from respective locations.
+7. **Run Clients:** Initiate clients from respective locations (`./client`).
 
 ## Noteworthy Features
 
